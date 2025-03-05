@@ -2,10 +2,15 @@
   Created by IntelliJ IDEA.
   User: malak
   Date: 05/03/2025
-  Time: 11:37
+  Time: 11:42
   To change this template use File | Settings | File Templates.
 --%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -72,11 +77,7 @@
         .text-center a:hover {
             text-decoration: underline;
         }
-        .btns{
-            display: flex;
-            justify-content: space-between;
-            gap: 10PX;
-        }
+
     </style>
 
 
@@ -90,26 +91,35 @@
 
 <div class="login">
 
-<div class="login-container">
-    <h2>Connexion</h2>
-    <form action="<%= request.getContextPath() %>/login" method="post">
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form action="<%= request.getContextPath() %>/login" method="post">
 
-        <div class="mb-3">
-            <label class="form-label">émail</label>
-            <input type="text" class="form-control" id="email" name="username" placeholder="Entrez votre émail" required>
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Mot de passe</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Entrez votre mot de passe" required>
-        </div>
-        <div class="btns">
+            <div class="mb-3">
+                <label class="form-label">Nom </label>
+                <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre Nom " required>
+            </div>
+            <div class="mb-3">
+                <label for="prénom" class="form-label">prénom</label>
+                <input type="text" class="form-control" id="prénom" name="prénom" placeholder="Entrez votre prénom" required>
+            </div>
+            <div class="mb-3">
+                <label for="émail" class="form-label">émail</label>
+                <input type="text" class="form-control" id="émail" name="émail" placeholder="Entrez votre émail" required>
+            </div>
+            <div class="mb-3">
+                <label for="mot de passe" class="form-label">mot de passe</label>
+                <input type="password" class="form-control" id="mot de passe" name="mot de passe" placeholder="Entrez votre mot de passe" required>
+            </div>
 
 
-        <button type="submit" class="btn btn-primary">Se connecter</button>
-        <button type="submit" class="btn btn-primary">Créer compte</button>
-        </div>
-    </form>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
 </div>
-</div>
+</body>
+</html>
+
 </body>
 </html>

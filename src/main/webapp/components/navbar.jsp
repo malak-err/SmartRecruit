@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!-- Navbar -->
-<header>
+<head>
     <nav class="navbar navbar-expand-md navbar-dark"
          style="background-color: navy">
         <div>
@@ -15,13 +15,13 @@
         </div>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/student/list">Student <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/Candidat">Candidat <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/course/list">Course</a>
+                <a class="nav-link" href="/Offre d'emploie">Offre d'emploie</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/inscription/list">Inscription</a>
+                <a class="nav-link" href="/Candidature/list">Candidature</a>
             </li>
         </ul>
         <c:if test="${not empty sessionScope.user}">
@@ -33,4 +33,4 @@
 
         </c:if>
     </nav>
-</header>
+</head>
