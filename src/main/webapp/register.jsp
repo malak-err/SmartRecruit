@@ -1,125 +1,105 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: malak
-  Date: 05/03/2025
-  Time: 11:42
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Title</title>
-</head>
-<body>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>login</title>
-    <link  rel="stylesheet"
-           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-
-           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-           crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion - EduManage</title>
-
+    <title>Sign Up Form</title>
     <style>
         body {
-            background-color: #f1f3f5;
-            height: 100vh;
-
-        }
-        .login-container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-        .login{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             display: flex;
             justify-content: center;
-            margin-top: 100px;
             align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
         h2 {
-            color: #007bff;
-            margin-bottom: 25px;
-            font-size: 24px;
             text-align: center;
+            margin-bottom: 20px;
+            color: #333;
         }
-        .form-label {
-            font-weight: 600;
+        .form-group {
+            margin-bottom: 15px;
         }
-        .form-control {
-            border-radius: 8px;
-            height: 40px;
-            font-size: 16px;
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
         }
-        .btn-primary {
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
             width: 100%;
             padding: 12px;
-            font-size: 16px;
-            border-radius: 8px;
             background-color: #007bff;
+            color: white;
             border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        .btn-primary:hover {
+        button:hover {
             background-color: #0056b3;
         }
-        .text-center a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .text-center a:hover {
-            text-decoration: underline;
-        }
-
     </style>
-
-
-
-
-
 </head>
 <body>
-
-<%@ include file="/components/navbar.jsp" %>
-
-<div class="login">
-
-    <div class="login-container">
-        <h2>Connexion</h2>
-        <form action="<%= request.getContextPath() %>/login" method="post">
-
-            <div class="mb-3">
-                <label class="form-label">Nom </label>
-                <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre Nom " required>
-            </div>
-            <div class="mb-3">
-                <label for="prénom" class="form-label">prénom</label>
-                <input type="text" class="form-control" id="prénom" name="prénom" placeholder="Entrez votre prénom" required>
-            </div>
-            <div class="mb-3">
-                <label for="émail" class="form-label">émail</label>
-                <input type="text" class="form-control" id="émail" name="émail" placeholder="Entrez votre émail" required>
-            </div>
-            <div class="mb-3">
-                <label for="mot de passe" class="form-label">mot de passe</label>
-                <input type="password" class="form-control" id="mot de passe" name="mot de passe" placeholder="Entrez votre mot de passe" required>
-            </div>
-
-
-
-                <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-    </div>
+<div class="form-container">
+    <h2>Sign Up</h2>
+    <form action="<%= request.getContextPath() %>/register" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="admin">Admin</option>
+                <option value="employee">Employee</option>
+                <option value="condidat">Condidat</option>
+            </select>
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
 </div>
-</body>
-</html>
-
 </body>
 </html>
